@@ -1,0 +1,67 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as mx;//vamos a usar los mixins
+
+.video{//PADRE
+    position: relative;
+    min-height: 50rem;
+    max-height: 70rem;
+    overflow: hidden;
+    
+
+
+    .overlay{//HIJO
+        position: absolute;
+        background: linear-gradient(
+            270deg,
+            rgba(v.$morado, 20%),
+            rgba(darken( v.$morado , 20%) , 70%),
+        );
+        inset: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+
+    video{//HIJO
+        display: block;
+        width: auto;
+        @include mx.compu{
+            width: 100%;
+        }
+
+    }
+
+
+}
+
+.contenido-video {//NIETO EL HIJO DEL OVERLAY
+    z-index: 10;
+
+    h2{
+        color: v.$blanco;
+        font-size: 7rem;
+        margin: 0;
+
+    }
+
+    p{
+        color: v.$blanco;
+        display: inline-block;
+        padding: 1rem 2rem;
+    }
+
+    img{
+        display: inline;
+    }
+    
+
+   
+    
+
+
+
+
+}

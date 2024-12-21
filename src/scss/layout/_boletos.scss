@@ -1,0 +1,81 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as mx;//vamos a usar los mixins
+
+.contenedor-boletos{
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    h3{
+        color: v.$blanco;
+    }
+
+    .boletos{
+        @include mx.contenedor;
+        @include mx.tableta{
+            @include mx.grid(2)
+        }
+    }
+}
+
+.pase{
+    transition: transform .3s ease-in-out ;
+   
+    
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    
+    &-nombre{
+      
+        font-size: 3.6rem;
+        font-weight: 900;
+        text-align: center;
+        color: v.$blanco;
+    }
+    &-header,
+    &-footer{
+        padding: 0.5rem;
+
+        p{
+            text-align: center;
+            color: v.$blanco;
+            font-weight: 900;
+            
+        }
+    }
+    &-header{
+        background: linear-gradient(120deg, #006400, #32cd32, #7cfc00, #00ff7f);
+        
+        p{
+            text-transform: uppercase;
+            font-size: 2.2rem;
+            padding: 1rem 0;
+
+        }
+    }
+    &-body {
+        background-color:v.$blanco;
+        ul{
+            @include mx.rs-lista;
+            li{
+                padding: 2rem;
+                border-bottom: 1px solid rgb(152, 145, 145);
+            }
+        }
+    }
+    &-footer {
+        background-color: v.$blanco;
+        padding: 1rem;
+        p{
+            font-size: 2.8rem;
+            font-weight: 900;
+           background-color: v.$morado;
+           padding: 1rem 0;
+           border-radius: 1rem;
+           cursor: pointer;
+
+           &:hover{
+            background-color: darken(v.$morado, 20);
+           }
+        }
+    }
+}

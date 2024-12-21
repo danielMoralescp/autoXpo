@@ -1,0 +1,63 @@
+@use './variables' as v;
+
+
+
+
+
+
+@mixin telefono{
+    @media (min-width: v.$telefono){//mientras sea mayor le aplicamos estos
+       @content;//gracias a esto podemos agregarle codigo luego
+
+
+    }
+}
+
+@mixin tableta{
+    @media (min-width: v.$tableta){//mientras sea mayor le aplicamos estos
+       @content;
+
+
+    }
+}
+
+@mixin compu{
+    @media (min-width: v.$compu){//mientras sea mayor le aplicamos estos
+       @content;
+
+
+    }
+}
+
+@mixin compuxxl{
+    @media (min-width: v.$compuxxl){//mientras sea mayor le aplicamos estos
+       @content;
+
+
+    }
+}
+
+
+@mixin contenedor{
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+@mixin grid-2c{
+    display: grid;
+    grid-template-columns:repeat(2, 1fr) ;
+    gap: 5rem;
+}
+@mixin grid($c:1, $gap : 5rem){
+    display: grid;
+    grid-template-columns:repeat($c, 1fr) ;
+    gap: $gap;
+}
+
+
+
+@mixin rs-lista{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

@@ -1,0 +1,71 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as mx;//vamos a usar los mixins
+
+
+.lineup{
+    
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    h3, .dia{
+        text-align: center;
+        color: v.$blanco;
+        
+    }
+
+    .dia{
+        
+        font-size: 3rem; 
+        text-transform: uppercase;
+    }
+}
+
+.escenarios-contenedor{
+    @include mx.contenedor;
+    @include mx.tableta{
+        @include mx.grid(2)
+    }
+}
+
+.escenario {
+    padding-top: 2rem;
+    .nombre-escenario {
+        color: white;
+        font-size: 3rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        text-align: center;
+
+    }
+}
+
+.calendario{
+    @include mx.rs-lista;
+
+    li{
+        padding: 2.5rem;
+        font-weight: 700;
+        span{
+            font-weight: 400;
+
+        }
+
+    }
+
+}
+
+.bg-amarillo{
+  background-color: rgb(26, 26, 26);
+  border-radius: 2rem;
+  color: white;
+  li:nth-child(odd){
+    background-color: lighten(rgb(26, 26, 26), 5%);
+  }
+}
+
+.bg-verde{
+    background-color:rgb(125, 125, 125) ;
+    border-radius: 2rem;
+    li:nth-child(odd){//even son los pares
+      background-color: lighten(rgb(125, 125, 125), 30%);
+    }
+
+}
